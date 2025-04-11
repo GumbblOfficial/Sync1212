@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MissionSync - Coordina tus misiones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MissionSync</h1>
+            <p>Coordina misiones de 15 minutos con tu equipo global</p>
+        </header>
+
+        <!-- Sección para ingresar disponibilidad -->
+        <div class="section" id="input-section">
+            <h2>Ingresa tu disponibilidad</h2>
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" placeholder="Ej. Juan" required>
+            </div>
+            <div class="form-group">
+                <label for="timezone">Zona horaria:</label>
+                <select id="timezone" required>
+                    <option value="">Selecciona tu zona horaria</option>
+                    <option value="UTC-12:00">UTC-12:00</option>
+                    <option value="UTC-11:00">UTC-11:00</option>
+                    <option value="UTC-10:00">UTC-10:00 (Hawai)</option>
+                    <option value="UTC-09:00">UTC-09:00 (Alaska)</option>
+                    <option value="UTC-08:00">UTC-08:00 (Pacífico)</option>
+                    <option value="UTC-07:00">UTC-07:00 (Montaña)</option>
+                    <option value="UTC-06:00">UTC-06:00 (Central)</option>
+                    <option value="UTC-05:00">UTC-05:00 (Este)</option>
+                    <option value="UTC-04:00">UTC-04:00 (Atlántico)</option>
+                    <option value="UTC-03:00">UTC-03:00 (Buenos Aires)</option>
+                    <option value="UTC-02:00">UTC-02:00</option>
+                    <option value="UTC-01:00">UTC-01:00</option>
+                    <option value="UTC+00:00">UTC+00:00 (Londres)</option>
+                    <option value="UTC+01:00">UTC+01:00 (París)</option>
+                    <option value="UTC+02:00">UTC+02:00 (El Cairo)</option>
+                    <option value="UTC+03:00">UTC+03:00 (Moscú)</option>
+                    <option value="UTC+04:00">UTC+04:00 (Dubái)</option>
+                    <option value="UTC+05:00">UTC+05:00 (Karachi)</option>
+                    <option value="UTC+06:00">UTC+06:00 (Dhaka)</option>
+                    <option value="UTC+07:00">UTC+07:00 (Bangkok)</option>
+                    <option value="UTC+08:00">UTC+08:00 (Singapur)</option>
+                    <option value="UTC+09:00">UTC+09:00 (Tokio)</option>
+                    <option value="UTC+10:00">UTC+10:00 (Sídney)</option>
+                    <option value="UTC+11:00">UTC+11:00</option>
+                    <option value="UTC+12:00">UTC+12:00 (Auckland)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="start-time">Hora de inicio:</label>
+                <input type="time" id="start-time" required>
+            </div>
+            <div class="form-group">
+                <label for="end-time">Hora de fin:</label>
+                <input type="time" id="end-time" required>
+            </div>
+            <button onclick="submitAvailability()">Enviar disponibilidad</button>
+        </div>
+
+        <!-- Sección para el calendario compartido -->
+        <div class="section" id="schedule-section">
+            <h2>Calendario compartido</h2>
+            <table id="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Hora (UTC)</th>
+                        <!-- Columnas dinámicas para nombres -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas dinámicas para horas -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sección para el temporizador -->
+        <div class="section" id="countdown-section">
+            <h2>Próxima misión</h2>
+            <div class="countdown" id="countdown">Selecciona un horario para comenzar</div>
+            <div class="confirmation">
+                <button onclick="confirmParticipation()">Confirmar participación</button>
+                <p id="confirmed-users">Usuarios confirmados: Ninguno</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
